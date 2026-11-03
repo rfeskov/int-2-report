@@ -1,0 +1,156 @@
+[+] Special report mode: show_fail
+[+] Going to autodetect and check the security hardening options of the running kernel
+[+] Detected version of the running kernel: (6, 12, 113)
+[+] Detected kconfig file of the running kernel: /boot/config-6.12.113+deb13-arm64
+[+] Detected cmdline parameters of the running kernel: /proc/cmdline
+[+] Saved sysctls to a temporary file /tmp/sysctl-f4zphh1m
+[+] Detected architecture: ARM64
+[+] Detected compiler: GCC 140200
+=======================================================================================================================
+             option_name              | type  |      reason      | decision |  expected  | check_result
+=======================================================================================================================
+CONFIG_ARM64_BTI_KERNEL               |kconfig| self_protection  |defconfig |     y      | FAIL: is not found
+CONFIG_RANDOM_KMALLOC_CACHES          |kconfig| self_protection  |   kspp   |     y      | FAIL: "is not set"
+CONFIG_SLAB_MERGE_DEFAULT             |kconfig| self_protection  |   kspp   | is not set | FAIL: "y"
+CONFIG_DEBUG_VIRTUAL                  |kconfig| self_protection  |   kspp   |     y      | FAIL: "is not set"
+CONFIG_STATIC_USERMODEHELPER          |kconfig| self_protection  |   kspp   |     y      | FAIL: "is not set"
+CONFIG_LOCK_DOWN_KERNEL_FORCE_CONFIDENTIALITY|kconfig| self_protection  |   kspp   |     y      | FAIL: "is not set"
+CONFIG_DEBUG_SG                       |kconfig| self_protection  |   kspp   |     y      | FAIL: "is not set"
+CONFIG_ZERO_CALL_USED_REGS            |kconfig| self_protection  |   kspp   |     y      | FAIL: "is not set"
+CONFIG_DEBUG_NOTIFIERS                |kconfig| self_protection  |   kspp   |     y      | FAIL: "is not set"
+CONFIG_KFENCE_SAMPLE_INTERVAL         |kconfig| self_protection  |   kspp   |    100     | FAIL: "0"
+CONFIG_RANDSTRUCT_FULL                |kconfig| self_protection  |   kspp   |     y      | FAIL: is not found
+CONFIG_HARDENED_USERCOPY_DEFAULT_ON   |kconfig| self_protection  |   kspp   |     y      | FAIL: is not found
+CONFIG_GCC_PLUGIN_LATENT_ENTROPY      |kconfig| self_protection  |   kspp   |     y      | FAIL: is not found
+CONFIG_MODULE_SIG_ALL                 |kconfig| self_protection  |   kspp   |     y      | FAIL: is not found
+CONFIG_MODULE_SIG_SHA512              |kconfig| self_protection  |   kspp   |     y      | FAIL: "is not set"
+CONFIG_MODULE_SIG_FORCE               |kconfig| self_protection  |   kspp   |     y      | FAIL: "is not set"
+CONFIG_INIT_ON_FREE_DEFAULT_ON        |kconfig| self_protection  |   kspp   |     y      | FAIL: "is not set"
+CONFIG_EFI_DISABLE_PCI_DMA            |kconfig| self_protection  |   kspp   |     y      | FAIL: "is not set"
+CONFIG_UBSAN_BOUNDS                   |kconfig| self_protection  |   kspp   |     y      | FAIL: is not found
+CONFIG_UBSAN_LOCAL_BOUNDS             |kconfig| self_protection  |   kspp   |     y      | FAIL: is not found
+CONFIG_UBSAN_TRAP                     |kconfig| self_protection  |   kspp   |     y      | FAIL: CONFIG_UBSAN_BOUNDS is not "y"
+CONFIG_UBSAN_SANITIZE_ALL             |kconfig| self_protection  |   kspp   |     y      | FAIL: is not found
+CONFIG_KSTACK_ERASE                   |kconfig| self_protection  |   kspp   |     y      | FAIL: is not found
+CONFIG_KSTACK_ERASE_METRICS           |kconfig| self_protection  |   kspp   | is not set | FAIL: CONFIG_KSTACK_ERASE is not "y"
+CONFIG_KSTACK_ERASE_RUNTIME_DISABLE   |kconfig| self_protection  |   kspp   | is not set | FAIL: CONFIG_KSTACK_ERASE is not "y"
+CONFIG_SCHED_CORE                     |kconfig| self_protection  |   kspp   |     y      | FAIL: "is not set"
+CONFIG_PAGE_TABLE_CHECK               |kconfig| self_protection  |   kspp   |     y      | FAIL: "is not set"
+CONFIG_PAGE_TABLE_CHECK_ENFORCED      |kconfig| self_protection  |   kspp   |     y      | FAIL: is not found
+CONFIG_WERROR                         |kconfig| self_protection  |   kspp   |     y      | FAIL: "is not set"
+CONFIG_CFI_CLANG                      |kconfig| self_protection  |   kspp   |     y      | FAIL: CONFIG_CC_IS_CLANG is not "y"
+CONFIG_CFI_PERMISSIVE                 |kconfig| self_protection  |   kspp   | is not set | FAIL: CONFIG_CC_IS_CLANG is not "y"
+CONFIG_ARM64_SW_TTBR0_PAN             |kconfig| self_protection  |   kspp   |     y      | FAIL: "is not set"
+CONFIG_SHADOW_CALL_STACK              |kconfig| self_protection  |   kspp   |     y      | FAIL: "is not set"
+CONFIG_KASAN_HW_TAGS                  |kconfig| self_protection  |   kspp   |     y      | FAIL: is not found
+CONFIG_DEFAULT_MMAP_MIN_ADDR          |kconfig| self_protection  |   kspp   |   65536    | FAIL: CONFIG_COMPAT is not "is not set"
+CONFIG_LSM_MMAP_MIN_ADDR              |kconfig| self_protection  |a13xp0p0v |   65536    | FAIL: CONFIG_COMPAT is not "is not set"
+CONFIG_SECURITY_SELINUX_DEVELOP       |kconfig| security_policy  |   kspp   | is not set | FAIL: "y"
+CONFIG_BINFMT_MISC                    |kconfig|cut_attack_surface|   kspp   | is not set | FAIL: "m"
+CONFIG_INET_DIAG                      |kconfig|cut_attack_surface|   kspp   | is not set | FAIL: "m"
+CONFIG_KEXEC                          |kconfig|cut_attack_surface|   kspp   | is not set | FAIL: "y"
+CONFIG_PROC_KCORE                     |kconfig|cut_attack_surface|   kspp   | is not set | FAIL: "y"
+CONFIG_HIBERNATION                    |kconfig|cut_attack_surface|   kspp   | is not set | FAIL: "y"
+CONFIG_COMPAT                         |kconfig|cut_attack_surface|   kspp   | is not set | FAIL: "y"
+CONFIG_MODULE_FORCE_LOAD              |kconfig|cut_attack_surface|   kspp   | is not set | FAIL: "y"
+CONFIG_MODULES                        |kconfig|cut_attack_surface|   kspp   | is not set | FAIL: "y"
+CONFIG_DEVMEM                         |kconfig|cut_attack_surface|   kspp   | is not set | FAIL: "y"
+CONFIG_LDISC_AUTOLOAD                 |kconfig|cut_attack_surface|   kspp   | is not set | FAIL: "y"
+CONFIG_FB                             |kconfig|cut_attack_surface|maintainer| is not set | FAIL: "y"
+CONFIG_VT                             |kconfig|cut_attack_surface|maintainer| is not set | FAIL: "y"
+CONFIG_CRYPTO_USER_API                |kconfig|cut_attack_surface|maintainer| is not set | FAIL: "m"
+CONFIG_CRYPTO_USER_API_AEAD           |kconfig|cut_attack_surface|maintainer| is not set | FAIL: "m"
+CONFIG_CRYPTO_USER_API_HASH           |kconfig|cut_attack_surface|maintainer| is not set | FAIL: "m"
+CONFIG_CRYPTO_USER_API_RNG            |kconfig|cut_attack_surface|maintainer| is not set | FAIL: "m"
+CONFIG_CRYPTO_USER_API_SKCIPHER       |kconfig|cut_attack_surface|maintainer| is not set | FAIL: "m"
+CONFIG_KPROBE_EVENTS                  |kconfig|cut_attack_surface|  grsec   | is not set | FAIL: "y"
+CONFIG_UPROBE_EVENTS                  |kconfig|cut_attack_surface|  grsec   | is not set | FAIL: "y"
+CONFIG_GENERIC_TRACER                 |kconfig|cut_attack_surface|  grsec   | is not set | FAIL: "y"
+CONFIG_FUNCTION_TRACER                |kconfig|cut_attack_surface|  grsec   | is not set | FAIL: "y"
+CONFIG_STACK_TRACER                   |kconfig|cut_attack_surface|  grsec   | is not set | FAIL: "y"
+CONFIG_HIST_TRIGGERS                  |kconfig|cut_attack_surface|  grsec   | is not set | FAIL: "y"
+CONFIG_BLK_DEV_IO_TRACE               |kconfig|cut_attack_surface|  grsec   | is not set | FAIL: "y"
+CONFIG_PROC_VMCORE                    |kconfig|cut_attack_surface|  grsec   | is not set | FAIL: "y"
+CONFIG_PROC_PAGE_MONITOR              |kconfig|cut_attack_surface|  grsec   | is not set | FAIL: "y"
+CONFIG_CHECKPOINT_RESTORE             |kconfig|cut_attack_surface|  grsec   | is not set | FAIL: "y"
+CONFIG_USERFAULTFD                    |kconfig|cut_attack_surface|  grsec   | is not set | FAIL: "y"
+CONFIG_HWPOISON_INJECT                |kconfig|cut_attack_surface|  grsec   | is not set | FAIL: "m"
+CONFIG_DEVPORT                        |kconfig|cut_attack_surface|  grsec   | is not set | FAIL: "y"
+CONFIG_DEBUG_FS                       |kconfig|cut_attack_surface|  grsec   | is not set | FAIL: "y"
+CONFIG_NOTIFIER_ERROR_INJECTION       |kconfig|cut_attack_surface|  grsec   | is not set | FAIL: "m"
+CONFIG_IO_URING                       |kconfig|cut_attack_surface|  grsec   | is not set | FAIL: "y"
+CONFIG_KCMP                           |kconfig|cut_attack_surface|  grsec   | is not set | FAIL: "y"
+CONFIG_RSEQ                           |kconfig|cut_attack_surface|  grsec   | is not set | FAIL: "y"
+CONFIG_SUNRPC_DEBUG                   |kconfig|cut_attack_surface|  grsec   | is not set | FAIL: "y"
+CONFIG_BLK_DEV_UBLK                   |kconfig|cut_attack_surface|  grsec   | is not set | FAIL: "m"
+CONFIG_SMB_SERVER                     |kconfig|cut_attack_surface|  grsec   | is not set | FAIL: "m"
+CONFIG_CACHESTAT_SYSCALL              |kconfig|cut_attack_surface|  grsec   | is not set | FAIL: "y"
+CONFIG_MPTCP                          |kconfig|cut_attack_surface|  grsec   | is not set | FAIL: "y"
+CONFIG_TLS                            |kconfig|cut_attack_surface|  grsec   | is not set | FAIL: "m"
+CONFIG_TIPC                           |kconfig|cut_attack_surface|  grsec   | is not set | FAIL: "m"
+CONFIG_IP_SCTP                        |kconfig|cut_attack_surface|  grsec   | is not set | FAIL: "m"
+CONFIG_STAGING                        |kconfig|cut_attack_surface|  clipos  | is not set | FAIL: "y"
+CONFIG_KSM                            |kconfig|cut_attack_surface|  clipos  | is not set | FAIL: "y"
+CONFIG_KALLSYMS                       |kconfig|cut_attack_surface|  clipos  | is not set | FAIL: "y"
+CONFIG_CRASH_DUMP                     |kconfig|cut_attack_surface|  clipos  | is not set | FAIL: "y"
+CONFIG_USER_NS                        |kconfig|cut_attack_surface|  clipos  | is not set | FAIL: "y"
+CONFIG_ACPI_TABLE_UPGRADE             |kconfig|cut_attack_surface|  clipos  | is not set | FAIL: "y"
+CONFIG_EFI_CUSTOM_SSDT_OVERLAYS       |kconfig|cut_attack_surface|  clipos  | is not set | FAIL: "y"
+CONFIG_AIO                            |kconfig|cut_attack_surface|  clipos  | is not set | FAIL: "y"
+CONFIG_BPF_JIT_ALWAYS_ON              |kconfig|cut_attack_surface|  clipos  |     y      | FAIL: "is not set"
+CONFIG_MAGIC_SYSRQ                    |kconfig|cut_attack_surface|  clipos  | is not set | FAIL: "y"
+CONFIG_MAGIC_SYSRQ_SERIAL             |kconfig|cut_attack_surface|grapheneos| is not set | FAIL: "y"
+CONFIG_KPROBES                        |kconfig|cut_attack_surface| lockdown | is not set | FAIL: "y"
+CONFIG_BPF_SYSCALL                    |kconfig|cut_attack_surface| lockdown | is not set | FAIL: "y"
+CONFIG_IP_DCCP                        |kconfig|cut_attack_surface|a13xp0p0v | is not set | FAIL: "m"
+CONFIG_FTRACE                         |kconfig|cut_attack_surface|a13xp0p0v | is not set | FAIL: "y"
+CONFIG_VIDEO_VIVID                    |kconfig|cut_attack_surface|a13xp0p0v | is not set | FAIL: "m"
+CONFIG_CORESIGHT                      |kconfig|cut_attack_surface|a13xp0p0v | is not set | FAIL: "m"
+CONFIG_XFS_SUPPORT_V4                 |kconfig|cut_attack_surface|a13xp0p0v | is not set | FAIL: "y"
+CONFIG_BLK_DEV_WRITE_MOUNTED          |kconfig|cut_attack_surface|a13xp0p0v | is not set | FAIL: "y"
+CONFIG_TRIM_UNUSED_KSYMS              |kconfig|cut_attack_surface|a13xp0p0v |     y      | FAIL: "is not set"
+CONFIG_ARM64_GCS                      |kconfig| harden_userspace |defconfig |     y      | FAIL: is not found
+CONFIG_PROC_MEM_NO_FORCE              |kconfig| harden_userspace |   kspp   |     y      | FAIL: "is not set"
+CONFIG_COREDUMP                       |kconfig| harden_userspace |  clipos  | is not set | FAIL: "y"
+CONFIG_ARCH_MMAP_RND_BITS             |kconfig| harden_userspace |a13xp0p0v |     33     | FAIL: "18"
+CONFIG_ARCH_MMAP_RND_COMPAT_BITS      |kconfig| harden_userspace |a13xp0p0v |     16     | FAIL: "11"
+page_alloc.shuffle                    |cmdline| self_protection  |   kspp   |     1      | FAIL: is not found
+hash_pointers                         |cmdline| self_protection  |   kspp   |   always   | FAIL: is not found
+slab_nomerge                          |cmdline| self_protection  |   kspp   | is present | FAIL: is not present
+init_on_free                          |cmdline| self_protection  |   kspp   |     1      | FAIL: is not found
+hardened_usercopy                     |cmdline| self_protection  |   kspp   |     1      | FAIL: is not found
+kfence.sample_interval                |cmdline| self_protection  |   kspp   |    100     | FAIL: is not found
+lockdown                              |cmdline| self_protection  |   kspp   |confidentiality| FAIL: is not found
+module.sig_enforce                    |cmdline| self_protection  |   kspp   |     1      | FAIL: is not found
+efi                                   |cmdline| self_protection  |   kspp   |*disable_early_pci_dma*| FAIL: is not found
+nosmt                                 |cmdline|cut_attack_surface|   kspp   | is present | FAIL: is not present
+debugfs                               |cmdline|cut_attack_surface|  grsec   |    off     | FAIL: is not found
+nomodule                              |cmdline|cut_attack_surface|a13xp0p0v | is present | FAIL: is not present
+bdev_allow_write_mounted              |cmdline|cut_attack_surface|a13xp0p0v |     0      | FAIL: is not found
+proc_mem.force_override               |cmdline| harden_userspace |   kspp   |   never    | FAIL: is not found
+net.core.bpf_jit_harden               |sysctl | self_protection  |   kspp   |     2      | FAIL: "0"
+vm.mmap_min_addr                      |sysctl | self_protection  |   kspp   |   65536    | FAIL: CONFIG_COMPAT is not "is not set"
+kernel.oops_limit                     |sysctl | self_protection  |a13xp0p0v |    100     | FAIL: "10000"
+kernel.warn_limit                     |sysctl | self_protection  |a13xp0p0v |    100     | FAIL: "0"
+kernel.apparmor_restrict_unprivileged_unconfined|sysctl | security_policy  |  ubuntu  |     1      | FAIL: "0"
+dev.tty.ldisc_autoload                |sysctl |cut_attack_surface|   kspp   |     0      | FAIL: "1"
+kernel.kptr_restrict                  |sysctl |cut_attack_surface|   kspp   |     2      | FAIL: "0"
+user.max_user_namespaces              |sysctl |cut_attack_surface|   kspp   |     0      | FAIL: "31336"
+kernel.kexec_load_disabled            |sysctl |cut_attack_surface|   kspp   |     1      | FAIL: "0"
+kernel.unprivileged_bpf_disabled      |sysctl |cut_attack_surface|   kspp   |     1      | FAIL: "2"
+kernel.modules_disabled               |sysctl |cut_attack_surface|   kspp   |     1      | FAIL: "0"
+kernel.modprobe                       |sysctl |cut_attack_surface|a13xp0p0v |            | FAIL: "/sbin/modprobe"
+kernel.io_uring_disabled              |sysctl |cut_attack_surface|  grsec   |     2      | FAIL: "0"
+kernel.sysrq                          |sysctl |cut_attack_surface|a13xp0p0v |     0      | FAIL: "438"
+net.ipv4.conf.all.accept_redirects    |sysctl | network_security |   cis    |     0      | FAIL: "1"
+net.ipv4.conf.default.accept_redirects|sysctl | network_security |   cis    |     0      | FAIL: "1"
+net.ipv6.conf.all.accept_redirects    |sysctl | network_security |   cis    |     0      | FAIL: "1"
+net.ipv6.conf.default.accept_redirects|sysctl | network_security |   cis    |     0      | FAIL: "1"
+net.ipv6.conf.all.accept_ra           |sysctl | network_security |   cis    |     0      | FAIL: "1"
+net.ipv6.conf.default.accept_ra       |sysctl | network_security |   cis    |     0      | FAIL: "1"
+fs.protected_fifos                    |sysctl | harden_userspace |   kspp   |     2      | FAIL: "1"
+kernel.yama.ptrace_scope              |sysctl | harden_userspace |   kspp   |     3      | FAIL: "0"
+vm.mmap_rnd_bits                      |sysctl | harden_userspace |a13xp0p0v |     33     | FAIL: "18"
+vm.mmap_rnd_compat_bits               |sysctl | harden_userspace |a13xp0p0v |     16     | FAIL: "11"
+
+[+] Check is finished: 'OK' - 179 (suppressed in output) / 'FAIL' - 143

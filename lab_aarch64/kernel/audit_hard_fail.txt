@@ -1,0 +1,28 @@
+CONFIG_ARM64_BTI_KERNEL               |kconfig| self_protection  |defconfig |     y      | FAIL: is not found
+CONFIG_STATIC_USERMODEHELPER          |kconfig| self_protection  |   kspp   |     y      | FAIL: "is not set"
+CONFIG_RANDSTRUCT_FULL                |kconfig| self_protection  |   kspp   |     y      | FAIL: is not found
+CONFIG_HARDENED_USERCOPY_DEFAULT_ON   |kconfig| self_protection  |   kspp   |     y      | FAIL: is not found
+CONFIG_GCC_PLUGIN_LATENT_ENTROPY      |kconfig| self_protection  |   kspp   |     y      | FAIL: is not found
+CONFIG_UBSAN_BOUNDS                   |kconfig| self_protection  |   kspp   |     y      | FAIL: is not found
+CONFIG_UBSAN_LOCAL_BOUNDS             |kconfig| self_protection  |   kspp   |     y      | FAIL: is not found
+CONFIG_UBSAN_TRAP                     |kconfig| self_protection  |   kspp   |     y      | FAIL: CONFIG_UBSAN_BOUNDS is not "y"
+CONFIG_UBSAN_SANITIZE_ALL             |kconfig| self_protection  |   kspp   |     y      | FAIL: is not found
+CONFIG_KSTACK_ERASE                   |kconfig| self_protection  |   kspp   |     y      | FAIL: is not found
+CONFIG_KSTACK_ERASE_METRICS           |kconfig| self_protection  |   kspp   | is not set | FAIL: CONFIG_KSTACK_ERASE is not "y"
+CONFIG_KSTACK_ERASE_RUNTIME_DISABLE   |kconfig| self_protection  |   kspp   | is not set | FAIL: CONFIG_KSTACK_ERASE is not "y"
+CONFIG_WERROR                         |kconfig| self_protection  |   kspp   |     y      | FAIL: "is not set"
+CONFIG_CFI_CLANG                      |kconfig| self_protection  |   kspp   |     y      | FAIL: CONFIG_CC_IS_CLANG is not "y"
+CONFIG_CFI_PERMISSIVE                 |kconfig| self_protection  |   kspp   | is not set | FAIL: CONFIG_CC_IS_CLANG is not "y"
+CONFIG_SHADOW_CALL_STACK              |kconfig| self_protection  |   kspp   |     y      | FAIL: "is not set"
+CONFIG_KASAN_HW_TAGS                  |kconfig| self_protection  |   kspp   |     y      | FAIL: is not found
+CONFIG_MODULES                        |kconfig|cut_attack_surface|   kspp   | is not set | FAIL: "y"
+CONFIG_FB                             |kconfig|cut_attack_surface|maintainer| is not set | FAIL: "y"
+CONFIG_VT                             |kconfig|cut_attack_surface|maintainer| is not set | FAIL: "y"
+CONFIG_FAIL_FUTEX                     |kconfig|cut_attack_surface|  grsec   | is not set | OK: is not found
+CONFIG_KCMP                           |kconfig|cut_attack_surface|  grsec   | is not set | FAIL: "y"
+CONFIG_TLS                            |kconfig|cut_attack_surface|  grsec   | is not set | FAIL: "m"
+CONFIG_IP_SCTP                        |kconfig|cut_attack_surface|  grsec   | is not set | FAIL: "m"
+CONFIG_BPF_SYSCALL                    |kconfig|cut_attack_surface| lockdown | is not set | FAIL: "y"
+CONFIG_TRIM_UNUSED_KSYMS              |kconfig|cut_attack_surface|a13xp0p0v |     y      | FAIL: "is not set"
+CONFIG_ARM64_GCS                      |kconfig| harden_userspace |defconfig |     y      | FAIL: is not found
+CONFIG_ARCH_MMAP_RND_BITS             |kconfig| harden_userspace |a13xp0p0v |     33     | FAIL: "18"

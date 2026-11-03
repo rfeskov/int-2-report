@@ -1,0 +1,14 @@
+dmesg_user	OK	[    0.000000] Booting Linux on physical CPU 0x0000000000 [0x610f0000]
+kallsyms_root	OK	
+perf_user	OK	  Performance counter stats for 'true':                0.20 msec task-
+bpf_user	OK	bpf -> 3 (OK)
+ptrace_child	OK	ptrace(ATTACH) -> 0 (OK)
+userns	OK	
+bwrap	OK	
+io_uring	OK	
+modprobe	OK	
+kexec_load	OK	
+proc_kcore	OK	
+ctl_dns	OK	2a04:4e42:92::644 debian.map.fastlydns.net deb.debian.org
+ctl_https	OK	http=200
+ctl_systemd	OK	

@@ -1,0 +1,14 @@
+dmesg_user	BLOCKED	dmesg: read kernel buffer failed: Operation not permitted
+kallsyms_root	BLOCKED	grep: /proc/kallsyms: No such file or directory
+perf_user	BLOCKED	Error: Access to performance monitoring and observability operations i
+bpf_user	BLOCKED	bpf -> -1 (Operation not permitted)
+ptrace_child	BLOCKED	ptrace(ATTACH) -> -1 (Operation not permitted)
+userns	BLOCKED	unshare: unshare failed: Operation not permitted
+bwrap	BLOCKED	bwrap: No permissions to create a new namespace, likely because the ke
+io_uring	BLOCKED	
+modprobe	BLOCKED	modprobe: ERROR: could not insert 'dummy': Operation not permitted
+kexec_load	BLOCKED	Can't open (/proc/kcore). Cannot open /proc/kallsyms Can't get the sym
+proc_kcore	BLOCKED	head: cannot open '/proc/kcore' for reading: No such file or directory
+ctl_dns	OK	2a04:4e42:8d::644 debian.map.fastlydns.net deb.debian.org
+ctl_https	OK	http=200
+ctl_systemd	OK	

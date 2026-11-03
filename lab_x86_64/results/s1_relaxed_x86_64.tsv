@@ -1,0 +1,14 @@
+dmesg_user	OK	[    0.000000] Linux version 6.12.113+deb13-amd64 (debian-kernel@lists
+kallsyms_root	OK	
+perf_user	OK	  Performance counter stats for 'true':                0.38 msec task-
+bpf_user	OK	bpf -> 3 (OK)
+ptrace_child	OK	ptrace(ATTACH) -> 0 (OK)
+userns	OK	
+bwrap	OK	
+io_uring	OK	
+modprobe	OK	
+kexec_load	OK	
+proc_kcore	OK	
+ctl_dns	OK	2a04:4e42:8d::644 debian.map.fastlydns.net deb.debian.org
+ctl_https	OK	http=200
+ctl_systemd	OK	

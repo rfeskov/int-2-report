@@ -1,0 +1,5 @@
+## cmdline
+BOOT_IMAGE=/boot/vmlinuz-6.12.113+deb13-arm64 root=UUID=6c08821d-9e3a-4a5b-8520-c340c174c78f ro quiet
+## lockdown
+[none] integrity confidentiality
+./run_tests.sh: line 31: sysctl: command not found
